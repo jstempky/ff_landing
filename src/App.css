@@ -2,10 +2,18 @@
   text-align: center;
 }
 
+h3 {
+  font-style: italic;
+  padding-left: 60px;
+  padding-right: 60px;
+  line-height: 60px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+  border-radius: 200px;
 }
 
 .App-header {
@@ -14,9 +22,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 30px;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.button-style {
+  border-radius: 6px;
+  margin: 20px;
+  background-color: yellow;
+  font-size: 20px;
+  padding: 10px;
+
+}
+
+.container-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-style {
+  width: 400px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: purple;
+  text-align: center;
 }
 
 .App-link {
