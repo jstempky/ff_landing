@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ff_landing/static/css/main.bcb24b04.chunk.css",
+    "main.css": "/ff_landing/static/css/main.560bbc52.chunk.css",
     "main.js": "/ff_landing/static/js/main.0c3aba60.chunk.js",
     "main.js.map": "/ff_landing/static/js/main.0c3aba60.chunk.js.map",
     "runtime~main.js": "/ff_landing/static/js/runtime~main.e945a5b2.js",
@@ -8,9 +8,9 @@
     "static/js/2.03f9b8dd.chunk.js": "/ff_landing/static/js/2.03f9b8dd.chunk.js",
     "static/js/2.03f9b8dd.chunk.js.map": "/ff_landing/static/js/2.03f9b8dd.chunk.js.map",
     "index.html": "/ff_landing/index.html",
-    "precache-manifest.f72ee5bb75b04e8ca4561f4571ec9dd2.js": "/ff_landing/precache-manifest.f72ee5bb75b04e8ca4561f4571ec9dd2.js",
+    "precache-manifest.0aa2d54e917544cbaeb4c71b470f944d.js": "/ff_landing/precache-manifest.0aa2d54e917544cbaeb4c71b470f944d.js",
     "service-worker.js": "/ff_landing/service-worker.js",
-    "static/css/main.bcb24b04.chunk.css.map": "/ff_landing/static/css/main.bcb24b04.chunk.css.map",
+    "static/css/main.560bbc52.chunk.css.map": "/ff_landing/static/css/main.560bbc52.chunk.css.map",
     "static/media/logo.png": "/ff_landing/static/media/logo.812ff160.png"
   }
 }
