@@ -26,11 +26,11 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h3>
-            FitFort helps Fitness Professionals/Personal Trainers sustain longer client relationships by making it easier to build personalized fitness plans and helping client’s see their progress.
+            FitFort helps Fitness Professionals/Personal Trainers sustain longer client relationships by making it easier to build personalized fitness plans and helping clients see their progress.
           </h3>
           <form className="container-style">
-            <input className="input-style" placeholder="fitfort@email.com" value={this.state.value} onChange={this.handleChange} type="text" name="email" />
-            <input className="button-style" type="submit" value="Sign up to be a pilot tester!" />
+            <input className="input-style" placeholder="enter your email here!" value={this.state.value} onChange={this.handleChange} type="text" name="email" />
+            <input className="button-style" type="submit" value="Sign up to be a pilot user!" />
           </form>
         </header>
       </div>
