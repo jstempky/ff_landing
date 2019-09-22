@@ -1,57 +1,52 @@
-import React, {Component} from 'react';
 import logo from './resources/logo.png';
-import axios from 'axios';
 import './App.css';
+import React, { Component } from 'react'
+import { emails } from './Components/UserFunctions'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {email: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({email: event.target.value});
-    console.log(this.state)
-  }
-
-  handleSubmit(event) {
-    axios.post('fitfort.herokuapp.com/emailsignup', {
-      email: this.state.email,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
+    constructor() {
+      super()
+      this.state = {
+        email: '',
+        errors: {}
       }
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-
-
-  render(){
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      this.onChange = this.onChange.bind(this)
+      this.onSubmit = this.onSubmit.bind(this)
+    }
+  
+    onChange(e) {
+      this.setState({ [e.target.name]: e.target.value })
+    }
+    onSubmit(e) {
+      e.preventDefault()
+  
+      const newEmail = {
+        email: this.state.email
+      }
+  
+      emails(newEmail).then(_res => {
+        this.props.history.push(`/thanks`)
+      })
+    }
+  
+    render() {
+      return (
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
           <h3>
             FitFort helps Fitness Professionals/Personal Trainers sustain longer client relationships by making it easier to build personalized fitness plans and helping clients see their progress.
           </h3>
-          <form className="container-style">
-            <input
-              className="input-style"
-              placeholder="enter your email here!"
-              value={this.state.value}
-              onChange={this.handleChange}
-              type="text"
-              name="email"
-            />
-            <input
+                  <form className="container-style">
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="email"
+                    placeholder="Sign up to be a pilot user!"
+                    value={this.state.email}
+                    onChange={this.onChange}
+                  />
+                 <input
               className="button-style"
               type="submit"
               value="Sign up to be a pilot user!"
@@ -59,8 +54,8 @@ class App extends Component {
           </form>
         </header>
       </div>
-    );
+      )
+    }
   }
-}
-
-export default App;
+  
+  export default App
