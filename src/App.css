@@ -1,33 +1,33 @@
-.App {
-  text-align: center;
+html {
+    background-image: linear-gradient(150deg, #9E2D91, #664ACA, navy);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-h3 {
-  font-style: italic;
-  padding-left: 60px;
-  padding-right: 60px;
-  line-height: 60px;
+
+.appStyle {
+  text-align: center;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
   border-radius: 200px;
+  margin: 10px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 30px;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: yellow;
 }
 
-.button-style {
+.overviewStyle {
+  color: white;
+  font-size: 30px;
+}
+
+.submitStyle {
   border-radius: 6px;
   margin: 20px;
   background-color: white;
@@ -44,11 +44,20 @@ h3 {
   align-items: center;
 }
 
-.input-style {
-  width: 100%;
-  height: 40px;
+.popup {
+  background-color: yellow;
+  color: purple;
+}
+
+.popupTextStyle {
+  padding: 6px;
+}
+
+.inputStyle {
+  width: 60%;
   border-radius: 10px;
   font-size: 20px;
+  padding: 8px;
   color: purple;
   text-align: center;
 }
