@@ -56,6 +56,13 @@ class App extends Component {
               <div>
                 <p className="overviewStyle">FitFort helps Fitness Professionals/Personal Trainers sustain longer client relationships by making it easier to build personalized fitness plans and helping clients see their progress.</p>
               </div>
+              {this.state.showPopup ?
+              <Popup
+                text='You have sucessfully registered for the Fitfort Beta!'
+                  closePopup={this.togglePopup.bind(this)}
+              />
+              : null
+              }
               <form noValidate onSubmit={this.onSubmit}>
                 <h1 className="App-header">Signup for Fitfort Beta!</h1>
                 <div className="formContainterStyle">
@@ -75,14 +82,6 @@ class App extends Component {
                 >
                 Sign Up!
                 </button>
-
-                  {this.state.showPopup ?
-                  <Popup
-                    text='You have sucessfully registered for the Fitfort Beta!'
-                      closePopup={this.togglePopup.bind(this)}
-/>
-: null
-}
               </form>
             </div>
       )
