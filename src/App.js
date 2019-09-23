@@ -1,12 +1,12 @@
-import logo from './resources/logo.png';
-import './App.css';
 import React, { Component } from 'react'
+import Popup from './Components/popup'
 import { emails } from './Components/UserFunctions'
 
 class App extends Component {
     constructor() {
       super()
       this.state = {
+        showPopup: false,
         email: '',
         errors: {}
       }
@@ -25,37 +25,60 @@ class App extends Component {
       }
   
       emails(newEmail).then(_res => {
-        this.props.history.push(`/thanks`)
+          return (  
+          <div className='popup'>  
+          <div className='popup\_inner'>  
+          <h1>{this.props.text}</h1>  
+          <button onClick={this.props.closePopup}>close me</button>  
+          </div>  
+          </div>  
+          );    
       })
     }
+
+    togglePopup() {  
+      this.setState({  
+           showPopup: !this.state.showPopup  
+      });  
+       }  
   
     render() {
       return (
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-          <h3>
-            FitFort helps Fitness Professionals/Personal Trainers sustain longer client relationships by making it easier to build personalized fitness plans and helping clients see their progress.
-          </h3>
-                  <form className="container-style">
+            <div className="App">
+              <form noValidate onSubmit={this.onSubmit}>
+                <h1 className="h3 mb-3 font-weight-normal">Signup for Fitfort Beta</h1>
+                <div className="form-group">
+                  <label htmlFor="name">Username</label>
                   <input
-                    type="email"
+                    type="text"
                     className="form-control"
                     name="email"
-                    placeholder="Sign up to be a pilot user!"
+                    placeholder="Enter your email"
                     value={this.state.email}
                     onChange={this.onChange}
                   />
-                 <input
-              className="button-style"
-              type="submit"
-              value="Sign up to be a pilot user!"
-            />
-          </form>
-        </header>
-      </div>
+                </div>
+                <button 
+                  onClick={this.togglePopup.bind(this)}
+                  type="submit"
+                  className="btn btn-lg btn-primary btn-block"
+                >
+                  Register
+
+                  {this.state.showPopup ?  
+                  <Popup  
+                    text='You have sucessfully registered for the Fitfort Beta'  
+                      closePopup={this.togglePopup.bind(this)}  
+/>  
+: null  
+}   
+                </button>
+              </form>
+            </div>
       )
     }
   }
+
+
   
   export default App
